@@ -18,5 +18,5 @@ if(process.env.NODE_ENV === 'production') {
 const dbURI = config.get('dbURI');
 const port = process.env.PORT || 4000;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-  .then((result) => app.listen(port))
+  .then((result) => {app.listen(port); console.log(result);})
   .catch((err) => console.log(err));
